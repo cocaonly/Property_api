@@ -1,0 +1,566 @@
+Traceback (most recent call last):
+  File "server.py", line 27, in <module>
+    main()
+  File "server.py", line 18, in main
+    http_server.listen(options.port)
+  File "/usr/local/python3/lib/python3.6/site-packages/tornado/tcpserver.py", line 143, in listen
+    sockets = bind_sockets(port, address=address)
+  File "/usr/local/python3/lib/python3.6/site-packages/tornado/netutil.py", line 168, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 98] Address already in use
+[I 190226 14:50:13 web:2162] 200 POST /getUserId (121.69.135.49) 179.87ms
+[I 190226 14:50:23 web:2162] 200 POST /getUserId (121.69.135.49) 180.26ms
+[I 190226 14:50:24 web:2162] 200 POST /getUserId (121.69.135.49) 179.09ms
+[W 190226 15:38:49 web:2162] 404 GET / (185.235.245.5) 0.57ms
+[W 190226 15:38:50 web:2162] 404 GET http://www.msftncsi.com/ncsi.txt (185.235.245.5) 0.47ms
+[W 190226 15:38:50 web:2162] 404 GET /HNAP1/ (185.235.245.5) 0.59ms
+[W 190226 16:42:04 web:2162] 404 GET http://www.baidu.com/cache/global/img/gs.gif (80.82.70.187) 0.63ms
+[W 190226 17:19:23 web:2162] 404 GET http://www.qq.com/404/search_children.js (120.132.3.65) 0.47ms
+[W 190226 18:16:53 web:2162] 404 GET http://47.105.117.78:8888/ (113.220.26.202) 0.48ms
+[I 190226 18:52:17 web:2162] 200 POST /getUserId (116.2.163.184) 179.92ms
+[I 190226 19:42:27 web:2162] 200 POST /getUserId (116.2.163.184) 179.58ms
+[I 190226 20:04:18 web:2162] 200 POST /login (116.2.163.184) 181.29ms
+[I 190226 20:06:10 web:2162] 200 POST /getUserId (116.2.163.184) 179.42ms
+[I 190226 20:08:08 web:2162] 200 POST /getUserId (116.2.163.184) 179.67ms
+[I 190226 20:11:48 web:2162] 200 POST /getUserId (116.2.163.184) 179.54ms
+[I 190226 20:12:10 web:2162] 200 POST /getUserId (116.2.163.184) 179.63ms
+[I 190226 20:13:04 web:2162] 200 POST /getUserId (116.2.163.184) 179.91ms
+[I 190226 20:14:35 web:2162] 200 POST /getUserId (116.2.163.184) 179.58ms
+[I 190226 20:15:35 web:2162] 200 POST /getUserId (116.2.163.184) 179.38ms
+[I 190226 20:18:58 web:2162] 200 POST /getUserId (116.2.163.184) 179.60ms
+[I 190226 20:21:08 web:2162] 200 POST /getUserId (116.2.163.184) 179.64ms
+[I 190226 20:27:42 web:2162] 200 POST /getUserId (116.2.163.184) 179.27ms
+[W 190226 21:20:51 web:2162] 404 GET http://2019.ip138.com/ic.asp (59.42.88.28) 0.47ms
+[W 190226 21:20:51 web:2162] 405 CONNECT ip.cn:443 (59.42.88.28) 0.38ms
+[W 190227 02:45:45 web:2162] 404 GET http://www.baidu.com/cache/global/img/gs.gif (80.82.70.187) 0.50ms
+[W 190227 12:50:47 web:2162] 404 GET http://www.baidu.com/cache/global/img/gs.gif (80.82.70.187) 0.48ms
+[E 190227 17:20:50 web:1670] Uncaught exception POST /getUserId (116.2.161.93)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.161.93')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 713, in _write_bytes
+        self._sock.sendall(data)
+    BrokenPipeError: [Errno 32] Broken pipe
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 37, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 771, in _execute_command
+        self._write_bytes(packet)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 718, in _write_bytes
+        "MySQL server has gone away (%r)" % (e,))
+    pymysql.err.OperationalError: (2006, "MySQL server has gone away (BrokenPipeError(32, 'Broken pipe'))")
+[E 190227 17:20:50 web:2162] 500 POST /getUserId (116.2.161.93) 3.52ms
+[E 190227 17:20:53 web:1670] Uncaught exception POST /getUserId (116.2.161.93)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.161.93')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 37, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190227 17:20:53 web:2162] 500 POST /getUserId (116.2.161.93) 1.27ms
+[E 190227 17:20:54 web:1670] Uncaught exception POST /getUserId (116.2.161.93)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.161.93')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 37, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190227 17:20:54 web:2162] 500 POST /getUserId (116.2.161.93) 1.20ms
+[W 190227 21:23:10 web:2162] 405 CONNECT m.baidu.com:80 (222.186.45.82) 0.70ms
+[W 190227 22:59:38 web:2162] 404 GET http://www.baidu.com/cache/global/img/gs.gif (80.82.70.187) 0.54ms
+[W 190227 23:24:42 web:2162] 405 CONNECT ip.cn:443 (59.42.89.89) 0.52ms
+[W 190227 23:24:42 web:2162] 404 GET http://2019.ip138.com/ic.asp (59.42.89.89) 0.38ms
+[W 190228 00:13:43 web:2162] 404 GET / (47.97.16.6) 0.70ms
+[W 190228 00:48:20 web:2162] 404 GET / (47.101.50.252) 0.51ms
+[W 190228 00:48:20 web:2162] 404 GET /explicit_not_exist_path (47.101.50.252) 0.48ms
+[W 190228 00:48:21 web:2162] 404 GET /index.html (47.101.50.252) 0.59ms
+[W 190228 00:48:21 web:2162] 404 GET /index.php (47.101.50.252) 0.55ms
+[W 190228 00:48:21 web:2162] 404 GET /index.jsp (47.101.50.252) 0.61ms
+[W 190228 00:48:21 web:2162] 404 GET /admin/ (47.101.50.252) 0.65ms
+[W 190228 00:48:21 web:2162] 404 GET /favicon.ico (47.101.50.252) 0.79ms
+[W 190228 00:48:21 web:2162] 404 GET /robots.txt (47.101.50.252) 0.69ms
+[W 190228 00:48:21 web:2162] 404 GET /README (47.101.50.252) 0.56ms
+[W 190228 00:48:21 web:2162] 404 GET /solr/ (47.101.50.252) 0.71ms
+[W 190228 00:48:21 web:2162] 404 GET /wcm/ (47.101.50.252) 0.69ms
+[W 190228 00:48:21 web:2162] 404 GET /phpMyAdmin/ (47.101.50.252) 0.54ms
+[W 190228 00:48:21 web:2162] 404 GET /phpmyadmin/ (47.101.50.252) 0.60ms
+[W 190228 00:48:21 web:2162] 404 GET /pma/ (47.101.50.252) 0.66ms
+[W 190228 08:42:04 web:2162] 404 GET / (120.78.231.236) 0.71ms
+[W 190228 09:09:04 web:2162] 404 GET http://www.baidu.com/cache/global/img/gs.gif (80.82.70.187) 0.50ms
+[W 190228 13:38:39 web:2162] 404 GET http://httpheader.net/ (89.248.172.90) 0.49ms
+[W 190228 18:55:47 web:2162] 404 GET / (172.105.238.87) 0.57ms
+[W 190228 19:15:07 web:2162] 404 GET http://www.baidu.com/cache/global/img/gs.gif (80.82.70.187) 0.51ms
+[W 190228 20:26:47 web:2162] 404 GET / (139.162.83.10) 0.67ms
+[E 190228 20:53:30 web:1670] Uncaught exception POST /getUserId (123.118.150.221)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='123.118.150.221')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 45, in post
+        oneInofo['job'] = user_info[4]
+    IndexError: tuple index out of range
+[E 190228 20:53:30 web:2162] 500 POST /getUserId (123.118.150.221) 183.14ms
+[E 190228 20:53:32 web:1670] Uncaught exception POST /getUserId (123.118.150.221)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='123.118.150.221')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 45, in post
+        oneInofo['job'] = user_info[4]
+    IndexError: tuple index out of range
+[E 190228 20:53:32 web:2162] 500 POST /getUserId (123.118.150.221) 180.80ms
+[E 190228 20:53:33 web:1670] Uncaught exception POST /getUserId (123.118.150.221)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='123.118.150.221')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 45, in post
+        oneInofo['job'] = user_info[4]
+    IndexError: tuple index out of range
+[E 190228 20:53:33 web:2162] 500 POST /getUserId (123.118.150.221) 180.01ms
+Development server is running at http://127.0.0.1:8888
+Quit the server with Control-C
+Traceback (most recent call last):
+  File "server.py", line 27, in <module>
+    main()
+  File "server.py", line 23, in main
+    tornado.ioloop.IOLoop.instance().start()
+  File "/usr/local/python3/lib/python3.6/site-packages/tornado/platform/asyncio.py", line 132, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/local/python3/lib/python3.6/asyncio/base_events.py", line 421, in run_forever
+    self._run_once()
+  File "/usr/local/python3/lib/python3.6/asyncio/base_events.py", line 1389, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/local/python3/lib/python3.6/selectors.py", line 445, in select
+    fd_event_list = self._epoll.poll(timeout, max_ev)
+KeyboardInterrupt
+[I 190228 21:02:12 web:2162] 200 POST /addUser (123.118.150.221) 356.67ms
+[I 190228 21:02:17 web:2162] 200 POST /getUserId (123.118.150.221) 176.41ms
+[W 190301 00:33:43 web:2162] 404 GET / (47.97.16.76) 0.71ms
+[W 190301 05:18:46 web:2162] 404 GET http://www.baidu.com/cache/global/img/gs.gif (80.82.70.187) 0.70ms
+[E 190301 09:15:42 web:1670] Uncaught exception POST /getUserId (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 713, in _write_bytes
+        self._sock.sendall(data)
+    BrokenPipeError: [Errno 32] Broken pipe
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 771, in _execute_command
+        self._write_bytes(packet)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 718, in _write_bytes
+        "MySQL server has gone away (%r)" % (e,))
+    pymysql.err.OperationalError: (2006, "MySQL server has gone away (BrokenPipeError(32, 'Broken pipe'))")
+[E 190301 09:15:42 web:2162] 500 POST /getUserId (116.2.167.133) 2.90ms
+[E 190301 09:15:51 web:1670] Uncaught exception POST /addUser (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/addUser', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 74, in post
+        infos = mrd.add_table(table="personnel", key=key, value=value)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 15, in add_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 09:15:51 web:2162] 500 POST /addUser (116.2.167.133) 1.39ms
+[W 190301 09:20:32 web:2162] 404 GET / (47.100.64.9) 0.54ms
+[E 190301 10:00:10 web:1670] Uncaught exception POST /getUserId (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:00:10 web:2162] 500 POST /getUserId (116.2.167.133) 1.09ms
+[E 190301 10:00:11 web:1670] Uncaught exception POST /getUserId (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:00:11 web:2162] 500 POST /getUserId (116.2.167.133) 1.13ms
+[E 190301 10:00:15 web:1670] Uncaught exception POST /getUserId (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:00:15 web:2162] 500 POST /getUserId (116.2.167.133) 1.22ms
+[E 190301 10:00:15 web:1670] Uncaught exception POST /getUserId (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:00:15 web:2162] 500 POST /getUserId (116.2.167.133) 1.30ms
+[E 190301 10:05:51 web:1670] Uncaught exception POST /getUserId (116.2.172.68)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.172.68')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:05:51 web:2162] 500 POST /getUserId (116.2.172.68) 1.24ms
+[E 190301 10:09:53 web:1670] Uncaught exception POST /getUserId (116.2.172.68)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.172.68')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:09:53 web:2162] 500 POST /getUserId (116.2.172.68) 1.85ms
+[E 190301 10:12:30 web:1670] Uncaught exception POST /getUserId (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:12:30 web:2162] 500 POST /getUserId (116.2.167.133) 1.28ms
+[E 190301 10:12:37 web:1670] Uncaught exception POST /getUserId (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:12:37 web:2162] 500 POST /getUserId (116.2.167.133) 1.27ms
+[E 190301 10:12:41 web:1670] Uncaught exception POST /getUserId (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:12:41 web:2162] 500 POST /getUserId (116.2.167.133) 1.20ms
+[E 190301 10:12:45 web:1670] Uncaught exception POST /getUserId (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:12:45 web:2162] 500 POST /getUserId (116.2.167.133) 1.47ms
+[E 190301 10:15:19 web:1670] Uncaught exception POST /getUserId (121.69.135.49)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='121.69.135.49')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:15:19 web:2162] 500 POST /getUserId (121.69.135.49) 1.11ms
+[I 190301 10:16:05 web:2162] 200 POST /getUserId (121.69.135.49) 176.39ms
+[I 190301 10:16:05 web:2162] 200 POST /getUserId (121.69.135.49) 176.19ms
+[I 190301 10:16:13 web:2162] 200 POST /getUserId (121.69.135.49) 177.18ms
+[I 190301 10:16:13 web:2162] 200 POST /getUserId (121.69.135.49) 176.43ms
+[I 190301 10:16:13 web:2162] 200 POST /getUserId (121.69.135.49) 176.29ms
+[I 190301 10:17:07 web:2162] 200 POST /login (116.2.167.133) 179.06ms
+[I 190301 10:17:12 web:2162] 200 POST /addUser (116.2.167.133) 355.96ms
+[I 190301 10:17:16 web:2162] 200 POST /getUserId (116.2.167.133) 176.10ms
+[I 190301 10:17:24 web:2162] 200 POST /getUserId (116.2.167.133) 177.37ms
+[W 190301 10:32:46 web:1667] 400 POST /login (116.2.172.68): Missing argument username
+[W 190301 10:32:46 web:2162] 400 POST /login (116.2.172.68) 0.83ms
+[E 190301 10:32:52 web:1670] Uncaught exception POST /login (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/login', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 15, in post
+        user_infos = mrd.select_table(table="users",column="*",condition="username",value=username)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+        self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+        result.read()
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+        first_packet = self.connection._read_packet()
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 657, in _read_packet
+        packet_header = self._read_bytes(4)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 707, in _read_bytes
+        CR.CR_SERVER_LOST, "Lost connection to MySQL server during query")
+    pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+[E 190301 10:32:52 web:2162] 500 POST /login (116.2.167.133) 3.36ms
+[W 190301 10:34:12 web:1667] 400 POST /login (116.2.172.68): Missing argument username
+[W 190301 10:34:12 web:2162] 400 POST /login (116.2.172.68) 1.00ms
+[W 190301 10:34:13 web:1667] 400 POST /login (116.2.172.68): Missing argument username
+[W 190301 10:34:13 web:2162] 400 POST /login (116.2.172.68) 0.89ms
+[W 190301 10:37:22 web:1667] 400 POST /login (116.2.172.68): Missing argument username
+[W 190301 10:37:22 web:2162] 400 POST /login (116.2.172.68) 0.84ms
+[W 190301 10:43:18 web:1667] 400 POST /login (116.2.172.68): Missing argument username
+[W 190301 10:43:18 web:2162] 400 POST /login (116.2.172.68) 1.10ms
+[E 190301 10:45:01 web:1670] Uncaught exception POST /getUserId (116.2.172.68)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/getUserId', version='HTTP/1.1', remote_ip='116.2.172.68')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 39, in post
+        user_infos = mrd.select_table(table="personnel",column="*",condition="enterpriseId",value=enterpriseId)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:45:01 web:2162] 500 POST /getUserId (116.2.172.68) 1.22ms
+[E 190301 10:54:54 web:1670] Uncaught exception POST /login (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/login', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 15, in post
+        user_infos = mrd.select_table(table="users",column="*",condition="username",value=username)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:54:54 web:2162] 500 POST /login (116.2.167.133) 1.54ms
+[E 190301 10:54:55 web:1670] Uncaught exception POST /login (116.2.167.133)
+    HTTPServerRequest(protocol='http', host='47.105.117.78:8888', method='POST', uri='/login', version='HTTP/1.1', remote_ip='116.2.167.133')
+    Traceback (most recent call last):
+      File "/usr/local/python3/lib/python3.6/site-packages/tornado/web.py", line 1590, in _execute
+        result = method(*self.path_args, **self.path_kwargs)
+      File "/home/wfx/project/AssetManagement/handlers/index.py", line 15, in post
+        user_infos = mrd.select_table(table="users",column="*",condition="username",value=username)
+      File "/home/wfx/project/AssetManagement/methods/readdb.py", line 8, in select_table
+        cur.execute(sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+        result = self._query(query)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+        conn.query(q)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 516, in query
+        self._execute_command(COMMAND.COM_QUERY, sql)
+      File "/usr/local/python3/lib/python3.6/site-packages/pymysql/connections.py", line 750, in _execute_command
+        raise err.InterfaceError("(0, '')")
+    pymysql.err.InterfaceError: (0, '')
+[E 190301 10:54:55 web:2162] 500 POST /login (116.2.167.133) 1.34ms
+[I 190301 11:01:08 web:2162] 200 POST /register (121.69.135.49) 351.23ms
+[I 190301 11:01:15 web:2162] 200 POST /register (121.69.135.49) 530.41ms
+Development server is running at http://127.0.0.1:8888
+Quit the server with Control-C
+insert into users (id,username,password) values (1111,'sss',123456)
+insert into users (id,username,password) values (1113,'sss',123456)
+Traceback (most recent call last):
+  File "server.py", line 27, in <module>
+    main()
+  File "server.py", line 23, in main
+    tornado.ioloop.IOLoop.instance().start()
+  File "/usr/local/python3/lib/python3.6/site-packages/tornado/platform/asyncio.py", line 132, in start
+    self.asyncio_loop.run_forever()
+  File "/usr/local/python3/lib/python3.6/asyncio/base_events.py", line 421, in run_forever
+    self._run_once()
+  File "/usr/local/python3/lib/python3.6/asyncio/base_events.py", line 1389, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/local/python3/lib/python3.6/selectors.py", line 445, in select
+    fd_event_list = self._epoll.poll(timeout, max_ev)
+KeyboardInterrupt
+[I 190301 11:02:55 web:2162] 200 POST /register (121.69.135.49) 174.51ms
+[I 190301 11:03:20 web:2162] 200 POST /register (121.69.135.49) 174.96ms
+[I 190301 11:03:21 web:2162] 200 POST /register (121.69.135.49) 174.85ms
+[I 190301 11:03:22 web:2162] 200 POST /register (121.69.135.49) 174.78ms
+[I 190301 11:03:22 web:2162] 200 POST /register (121.69.135.49) 173.87ms
+[I 190301 11:03:22 web:2162] 200 POST /register (121.69.135.49) 174.30ms
+[I 190301 11:03:37 web:2162] 200 POST /login (116.2.167.133) 177.62ms
+[I 190301 11:06:59 web:2162] 200 POST /getUserId (116.2.172.68) 175.92ms
+[I 190301 11:08:36 web:2162] 200 POST /register (116.2.167.133) 175.21ms
+[W 190301 11:14:11 web:2162] 404 GET / (172.105.238.87) 0.78ms
+[I 190301 11:15:52 web:2162] 200 POST /register (116.2.172.68) 348.31ms
+[I 190301 11:16:30 web:2162] 200 POST /getUserId (116.2.167.133) 175.32ms
+[I 190301 11:18:33 web:2162] 200 POST /getUserId (116.2.172.68) 175.39ms
+[I 190301 11:20:14 web:2162] 200 POST /register (121.69.135.49) 175.42ms
