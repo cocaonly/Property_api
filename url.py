@@ -27,4 +27,6 @@ url = [
     (r'/admin/getyijian', AdminGetyijianHandler),
     (r'/admin/getloudong', AdminGetloudongHandler),
     (r'/admin/getloudonglist', AdminGetloudongListHandler),
+    (r'/admin/getloudonglist', AdminGetloudongListHandler),
+    (r'/admin/getloudonglist', AdminGetloudongListHandler),
 ]
