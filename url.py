@@ -27,18 +27,4 @@ url = [
     (r'/admin/getyijian', AdminGetyijianHandler),
     (r'/admin/getloudong', AdminGetloudongHandler),
     (r'/admin/getloudonglist', AdminGetloudongListHandler),
-
-    (r'/addloudong', AddLoudongHandler),
-    (r'/addlouceng', AddLoucengHandler),
-    (r'/addfangjian', AddFanjianHandler),
-    (r'/user/login', UserLoginHandler),
-    (r'/user/ModPassword', UserModPasswordHandler),
-    (r'/admin/getroom', AdminGetroomHandler),
-    (r'/admin/getloudong', AdminGetloudongHandler),
-    (r'/user/baoxiu', UserBaoxiuHandler),
-    (r'/user/yijian', UserYijianHandler),
-    (r'/admin/getbaoxiu', AdminGetbaoxiuHandler),
-    (r'/admin/getyijian', AdminGetyijianHandler),
-    (r'/admin/getloudong', AdminGetloudongHandler),
-    (r'/admin/getloudonglist', AdminGetloudongListHandler),
 ]
