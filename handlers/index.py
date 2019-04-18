@@ -531,7 +531,7 @@ class UserBaoxiuHandler(tornado.web.RequestHandler):
             result.setdefault('code', 200)
             result.setdefault('data', "successful")
         where = f"(id = {fangjian_id})"
-        value = f"status = 0"
+        value = f"status = 0,shui={shui},dian={dian},meiqi={meiqi},mensuo={mensuo},deng={deng},xiashui={xiashui},dire={dire}"
         infos = mrd.update_table(table="fangjian", value=value, where=where)
         self.write(result)
 
